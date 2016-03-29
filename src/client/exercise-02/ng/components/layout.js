@@ -6,6 +6,8 @@ window._app.global_ng_module
   controller: ['chuckNorris', function(chuckNorris) {
     chuckNorris.fetch3Random().then((res) => {
       console.log(res.data.value);
+      this.facts = res.data.value;
     })
   }]
 });
+

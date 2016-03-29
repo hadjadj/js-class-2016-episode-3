@@ -17,7 +17,7 @@ appModule.component('layout', {
 });
 
 appModule.controller('HelloController',
-  [function () {
+  ['$scope', function ($scope) {
     this.names = [];
 
     this.addName = function () {
@@ -30,7 +30,11 @@ appModule.controller('HelloController',
       // XXXX BAAAD NOT ANGULAR !!!!
       // DON'T WORK !
       // FIX ME !
-      setTimeout(() => this.names.shift(), 1000);
+        // setTimeout est une primitive JavaScript. Donc les MAJ ne sont pas prisent en compte par
+      setTimeout(() => {
+          this.names.shift();
+          $scope.$digest();
+      }, 1000);
       ////////////////////////////////////////
     };
   }]

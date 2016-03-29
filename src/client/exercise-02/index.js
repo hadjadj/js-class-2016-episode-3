@@ -20,6 +20,7 @@ window._app.global_ng_module
 
 // use more convenient AMD syntax
 require([
-  'client/exercise-02/ng/components/layout',
-  'client/exercise-02/index.css!'
+    'client/exercise-02/ng/components/fact',
+    'client/exercise-02/ng/components/layout',
+    'client/exercise-02/index.css!'
 ], app.bootstrap);
